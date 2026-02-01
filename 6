@@ -1,0 +1,17 @@
+function login(){
+    let role = document.getElementById("role").value;
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if(
+        (role==="Admin" && user==="admin" && pass==="admin123") ||
+        (role==="Reseller" && user==="reseller" && pass==="res123") ||
+        (role==="User" && user==="user" && pass==="user123")
+    ){
+        localStorage.setItem("user",user);
+        localStorage.setItem("role",role);
+        window.location.href="dashboard.html";
+    }else{
+        alert("Invalid Login");
+    }
+}

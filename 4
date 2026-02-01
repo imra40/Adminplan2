@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Portal Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="portal">
+    <h2 id="welcome"></h2>
+
+    <div class="portal-box">
+        <p><b>Access Level:</b> <span id="roleText"></span></p>
+    </div>
+
+    <button class="btn logout" onclick="logout()">LOGOUT</button>
+</div>
+
+<script>
+document.getElementById("welcome").innerText =
+"Welcome " + localStorage.getItem("user");
+
+document.getElementById("roleText").innerText =
+localStorage.getItem("role");
+
+function logout(){
+    localStorage.clear();
+    window.location.href="index.html";
+}
+</script>
+
+</body>
+</html>
